@@ -1,0 +1,67 @@
+---
+title: "Fish Length Assignment"
+author: "Paloma Cartwright"
+date: "02/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## This is the main header of the page
+
+*My name is **Paloma**.*
+
+I want to write this^2^ as a superscript and this~word~ as a subscript.
+
+I want to make a list of fruits.
+
+Fruit types
+
+    -   Apples
+
+        -   Green Apples
+
+        -   Red Apples
+
+    -   Bananas
+
+    -   Grapes
+
+        -   Green Grapes
+
+        -   Purple Grapes
+        
+
+Fruit Types 
+
+    1. Apples 
+    2. Bananas
+    
+
+```{r}
+standard_weight <- function(a, b, length){
+  a*(length^b)
+}
+
+print(Milkfish <- standard_weight(a=0.0905, b=2.52, length=60))
+print(Giant_Trevally <- standard_weight( a = 0.0353, b = 3.05, length = 60))
+print(Giant_Barracuda <- standard_weight(a = 0.0181, b = 3.27, length = 60))
+
+fish_length <- seq(from = 0, to = 200, by = 1)
+
+Giant_Barry <- standard_weight(a = 0.0181, b = 3.27, length = fish_length)
+
+barracuda_df <- data.frame(fish_length, Giant_Barry)
+
+ggplot(data = barracuda_df, aes(x = fish_length, y = Giant_Barry)) + 
+         geom_point() +
+         labs(x = "Fish Length(cm)", 
+              y = "Barracuda Weight(g)", 
+              title = "Barracuda Weight by Increasing Lengths")
+
+
+```
+
