@@ -41,6 +41,7 @@ Fruit Types
     2. Bananas
     
 
+I removed the picture I had inserted here because it was of my goddaughter
 ```{r}
 standard_weight <- function(a, b, length){
   a*(length^b)
